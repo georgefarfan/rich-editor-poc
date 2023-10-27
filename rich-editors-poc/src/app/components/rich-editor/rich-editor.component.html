@@ -1,0 +1,51 @@
+<div class="d-flex-col container-fluid">
+  <form [formGroup]="form">
+    <div class="d-flex-col">
+      <div class="d-flex align-items-center">
+        <h1 class="mr-3">FROALA RICH EDITOR</h1>
+        <a class="f-bold" href="https://froala.com/">WEB PAGE</a>
+      </div>
+
+      <div class="d-flex w-100">
+        <div
+          class="w-60"
+          formControlName="editorContentFroala"
+          [froalaEditor]="options"
+        ></div>
+        <div class="w-40 ml-4 mr-4">
+          <h3 class="mr-2">CONTENT FROALA</h3>
+
+          <p>
+            {{ form.value.editorContentFroala }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider mt-4 mb-4"></div>
+
+    <div class="d-flex-col">
+      <div class="d-flex align-items-center">
+        <h1 class="mr-3">TinyMCE 6 Angular Demo</h1>
+        <a class="f-bold" href="https://www.tiny.cloud/">WEB PAGE</a>
+      </div>
+
+      <div class="d-flex w-100">
+        <div class="w-60">
+          <editor
+            [apiKey]="apiTinyMCE"
+            formControlName="editorContentTinymce"
+            [init]="{
+              plugins: 'lists link image table code help wordcount'
+            }"
+          ></editor>
+        </div>
+        <div class="w-40 ml-4 mr-4">
+          <h3>CONTENT TinyMCE</h3>
+          <p>{{ form.value.editorContentTinymce }}</p>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div></div>
+</div>
